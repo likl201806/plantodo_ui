@@ -71,7 +71,7 @@
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: var(--bg-soft);
+  background: var(--bg-white);
   border: 1px solid var(--border-soft);
   padding: 8px 10px;
   color: #5b5b5b;

@@ -66,7 +66,7 @@
 .space-settings__menu-item {
   border-radius: 8px;
   padding: 8px 10px;
-  background: var(--bg-soft);
+  background: var(--bg-white);
   border: 1px solid var(--border);
   cursor: pointer;
   min-width: 124px;
