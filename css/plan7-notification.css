@@ -1,0 +1,163 @@
+/* ========== 图7-通知：PlanTodo 通知中心界面 ========== */
+
+.plan7-notification {
+  --green: #42b883;
+  --green-light: #e8f7f0;
+  --green-hover: #39a875;
+  --bg-white: #ffffff;
+  --bg-soft: #f7f7f8;
+  --border: #ededed;
+  --border-light: #f3f3f3;
+  --text-primary: #1a1a1a;
+  --text-secondary: #8c8c8c;
+  --text-muted: #b0b0b0;
+  --radius: 10px;
+  --radius-sm: 8px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.plan7-notification .mac-window__body {
+  background: var(--bg-white);
+}
+
+/* 左侧“所有空间”右侧计数，与图3一致 */
+.plan7-notification .nav-sidebar__item-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* 底部通知激活态 */
+.plan7-notification .nav-sidebar__bottom .nav-sidebar__item--active {
+  background: var(--green-light);
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* ---- 中间通知列表 ---- */
+.notification-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+}
+
+.notification-main__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.notification-main__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.notification-main__read-btn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafafa;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.notification-main__read-btn:hover {
+  border-color: #dcdcdc;
+  color: var(--text-primary);
+}
+
+.notification-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px 12px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.notification-item:hover {
+  background: #fcfcfc;
+}
+
+.notification-item--active {
+  border-color: #dfe8e2;
+  background: #fafdfa;
+}
+
+.notification-item__text {
+  min-width: 0;
+}
+
+.notification-item__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-item__meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-item__badge {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #7f7f7f;
+  background: #f8f8f8;
+}
+
+.notification-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.notification-item__detail-btn {
+  border: 1px solid #d6eadf;
+  border-radius: 8px;
+  padding: 6px 10px;
+  line-height: 1;
+  font-size: 12px;
+  color: var(--green);
+  background: var(--green-light);
+  cursor: pointer;
+}
+
+.notification-item__detail-btn:hover {
+  background: #dcf2e7;
+}
