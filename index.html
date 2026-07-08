@@ -141,13 +141,13 @@
                 </div>
               </nav>
 
-              <!-- 中间栏：上方文件夹/筛选，下方任务列表 -->
+              <!-- 中间栏：头部文件夹/筛选 + 下方任务列表 -->
               <div class="todo-center-column">
-              <aside class="folder-sidebar">
-                <div class="folder-sidebar__section">
-                  <div class="folder-sidebar__header">
+              <header class="todo-center-column__header">
+                <div class="todo-center-column__header-row">
+                  <div class="todo-center-column__header-label">
                     <span>待办文件夹</span>
-                    <div class="folder-sidebar__header-actions">
+                    <div class="todo-center-column__header-actions">
                       <button class="icon-btn-sm" aria-label="编辑">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9.5 2.5l2 2-7 7H2.5v-2l7-7z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
                       </button>
@@ -156,7 +156,7 @@
                       </button>
                     </div>
                   </div>
-                  <ul class="folder-list">
+                  <ul class="folder-list folder-list--horizontal">
                     <li class="folder-list__item">
                       <span class="folder-list__name">工作日</span>
                       <span class="folder-list__count">0</span>
@@ -181,9 +181,9 @@
                   </ul>
                 </div>
 
-                <div class="folder-sidebar__section folder-sidebar__section--bottom">
-                  <div class="folder-sidebar__header"><span>状态筛选</span></div>
-                  <ul class="filter-list">
+                <div class="todo-center-column__header-row">
+                  <div class="todo-center-column__header-label"><span>状态筛选</span></div>
+                  <ul class="filter-list filter-list--horizontal">
                     <li class="filter-list__item filter-list__item--active">
                       <span>全部</span><span class="filter-list__count">2</span>
                     </li>
@@ -201,7 +201,7 @@
                     </li>
                   </ul>
                 </div>
-              </aside>
+              </header>
 
               <!-- 主内容：任务列表 -->
               <section class="task-main">
