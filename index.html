@@ -1191,25 +1191,45 @@
               <div class="memo-main">
                 <header class="memo-main__header">
                   <div class="memo-main__title-row">
-                    <span class="memo-main__title">备忘录</span>
-                    <button class="memo-main__add-btn" aria-label="新建备忘录文件夹">+</button>
+                    <span class="memo-main__title">备忘录文件夹</span>
+                    <button class="memo-main__add-btn" aria-label="新建备忘录文件夹">+备忘录文件夹</button>
                   </div>
-                  <ul class="memo-folder-list">
-                    <li class="memo-folder-list__item memo-folder-list__item--active">
-                      <span class="memo-folder-list__name">所有备忘录</span>
-                      <span class="memo-folder-list__count">9</span>
-                    </li>
-                    <li class="memo-folder-list__item">
-                      <span class="memo-folder-list__name">AI私教</span>
-                      <span class="memo-folder-list__count">1</span>
-                      <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
-                    </li>
-                    <li class="memo-folder-list__item">
-                      <span class="memo-folder-list__name">远维</span>
-                      <span class="memo-folder-list__count">2</span>
-                      <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
-                    </li>
-                  </ul>
+                  <div class="scroll-strip" data-scroll-strip data-scroll-strip-show-arrows="always">
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--prev" aria-label="向左滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L4 6l3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="scroll-strip__viewport">
+                      <ul class="memo-folder-list">
+                        <li class="memo-folder-list__item memo-folder-list__item--active">
+                          <span class="memo-folder-list__name">所有备忘录</span>
+                          <span class="memo-folder-list__count">9</span>
+                        </li>
+                        <li class="memo-folder-list__item">
+                          <span class="memo-folder-list__name">AI私教</span>
+                          <span class="memo-folder-list__count">1</span>
+                          <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                        </li>
+                        <li class="memo-folder-list__item">
+                          <span class="memo-folder-list__name">远维</span>
+                          <span class="memo-folder-list__count">2</span>
+                          <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                        </li>
+                        <li class="memo-folder-list__item">
+                          <span class="memo-folder-list__name">产品灵感</span>
+                          <span class="memo-folder-list__count">5</span>
+                          <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                        </li>
+                        <li class="memo-folder-list__item">
+                          <span class="memo-folder-list__name">运维排查</span>
+                          <span class="memo-folder-list__count">3</span>
+                          <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--next" aria-label="向右滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L8 6l-3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
                 </header>
 
                 <section class="memo-list">
