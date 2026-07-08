@@ -1,0 +1,442 @@
+/* ========== 图2-日程：PlanTodo 月历 / 日程界面 ========== */
+
+.plan2-calendar {
+  --green: #42b883;
+  --green-light: #e8f7f0;
+  --green-hover: #3aa876;
+  --bg-sidebar: #f7f7f8;
+  --bg-white: #ffffff;
+  --border: #ededed;
+  --border-light: #f0f0f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #8c8c8c;
+  --text-muted: #b0b0b0;
+  --red: #e74c3c;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- 日历中间栏 ---- */
+.cal-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--bg-white);
+}
+
+/* 顶部工具栏 */
+.cal-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cal-toolbar__today {
+  padding: 6px 14px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cal-toolbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cal-toolbar__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.cal-toolbar__nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.cal-toolbar__month {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* 视图下拉 */
+.cal-toolbar__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.cal-toolbar__view svg {
+  color: var(--text-secondary);
+}
+
+.cal-toolbar__spacer {
+  flex: 1;
+}
+
+/* ---- 月历网格 ---- */
+.cal-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.cal-weekday {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.cal-weeks {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  min-height: 0;
+}
+
+.cal-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.cal-cell {
+  position: relative;
+  border-right: 1px solid var(--border-light);
+  padding: 6px 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.cal-cell:last-child {
+  border-right: none;
+}
+
+.cal-cell:hover {
+  background: #fafafa;
+}
+
+.cal-cell__date {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.cal-cell--other .cal-cell__date {
+  color: var(--text-muted);
+}
+
+.cal-cell--other {
+  background: #fcfcfc;
+}
+
+/* 今天圆点标记 */
+.cal-cell--today .cal-cell__date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 11px;
+}
+
+/* 选中的日期单元格 */
+.cal-cell--selected {
+  background: var(--green-light);
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+
+.cal-cell__count {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+/* 左侧周序号（浅色装饰） */
+.cal-cell__week {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  font-size: 10px;
+  color: #dcdcdc;
+}
+
+/* 日程事件卡片 */
+.cal-event {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 5px 6px;
+  background: rgba(66, 184, 131, 0.14);
+  border-left: 3px solid var(--green);
+  border-radius: 4px;
+}
+
+.cal-event__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: var(--green);
+  border-radius: 4px;
+  color: #fff;
+}
+
+.cal-event__title {
+  font-size: 11px;
+  color: var(--text-primary);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- 右侧日程详情面板 ---- */
+.event-detail {
+  width: 316px;
+  min-width: 316px;
+  background: var(--bg-white);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  overflow-y: auto;
+}
+
+.event-detail__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.event-detail__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.event-detail__card {
+  background: #f9f9f9;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.event-detail__card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.event-detail__card-time {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.event-detail__field {
+  margin-bottom: 16px;
+}
+
+.event-detail__label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.event-detail__space-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* 参与状态分段 */
+.event-detail__segment {
+  display: flex;
+  padding: 3px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  gap: 3px;
+}
+
+.event-detail__segment-item {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: center;
+}
+
+.event-detail__segment-item--active {
+  background: var(--green);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* 成员 chip */
+.event-detail__member {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 5px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.event-detail__member-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* 协作动态 */
+.event-detail__activity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.event-detail__activity-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* 评论摘要 */
+.event-detail__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.event-detail__link {
+  font-size: 12px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+.event-detail__comment-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.event-detail__comment-empty {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.event-detail__comment-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* 底部操作 */
+.event-detail__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.event-detail__btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.event-detail__btn--primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+  font-weight: 500;
+}
