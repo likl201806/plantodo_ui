@@ -131,3 +131,40 @@
     toggleBtn.setAttribute('aria-label', isDanger ? '关闭批量选择' : '开启批量选择');
   });
 })();
+
+/**
+ * 图9-用户：左侧空间和模块选中态联动
+ * 1) 点击空间项时，空间项单选，且清空所有模块选中态
+ * 2) 点击模块项时，仅在模块区内单选
+ */
+(function () {
+  var panel = document.querySelector('.plan9-user');
+  if (!panel) return;
+
+  var spaceItems = panel.querySelectorAll('[data-plan9-space-item]');
+  var moduleItems = panel.querySelectorAll('[data-plan9-module-item]');
+  if (!spaceItems.length || !moduleItems.length) return;
+
+  function clearActive(items) {
+    items.forEach(function (item) {
+      item.classList.remove('nav-sidebar__item--active');
+    });
+  }
+
+  spaceItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      clearActive(spaceItems);
+      item.classList.add('nav-sidebar__item--active');
+
+      // 选中左侧用户（空间）后，模块内所有内容取消选中
+      clearActive(moduleItems);
+    });
+  });
+
+  moduleItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      clearActive(moduleItems);
+      item.classList.add('nav-sidebar__item--active');
+    });
+  });
+})();
