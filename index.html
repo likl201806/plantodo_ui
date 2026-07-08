@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/plan3-discovery.css" />
   <link rel="stylesheet" href="css/plan4-album.css" />
   <link rel="stylesheet" href="css/plan5-memo.css" />
+  <link rel="stylesheet" href="css/plan6-space-setting.css" />
 </head>
 <body>
   <div class="prototype-shell">
@@ -39,6 +40,10 @@
         <button class="ui-gallery__item" data-ui="plan5-memo">
           <span class="ui-gallery__item-index">05</span>
           <span class="ui-gallery__item-label">图5-mac备忘录</span>
+        </button>
+        <button class="ui-gallery__item" data-ui="plan6-space-setting">
+          <span class="ui-gallery__item-index">06</span>
+          <span class="ui-gallery__item-label">图6-空间设置</span>
         </button>
         <!-- 后续 UI 图在此追加 -->
       </nav>
@@ -1328,6 +1333,158 @@
                   <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>iPhone 版的备忘录详情的任务事项应该可以选择内容，点击左侧应该可以修改待办事项的完成状态</li>
                 </ul>
               </aside>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 图6-空间设置 ========== -->
+        <div class="plan6-space-setting" data-ui-panel="plan6-space-setting" style="display: none;">
+          <div class="mac-window">
+            <header class="mac-window__titlebar">
+              <div class="mac-window__traffic-lights">
+                <span class="traffic-light traffic-light--close"></span>
+                <span class="traffic-light traffic-light--minimize"></span>
+                <span class="traffic-light traffic-light--maximize"></span>
+              </div>
+              <span class="mac-window__app-name">PlanTodo</span>
+            </header>
+
+            <div class="mac-window__body">
+              <nav class="nav-sidebar">
+                <div class="nav-sidebar__user">
+                  <div class="nav-sidebar__avatar">L</div>
+                  <div class="nav-sidebar__user-info">
+                    <div class="nav-sidebar__user-name">Lisa</div>
+                    <div class="nav-sidebar__user-space">共享空间</div>
+                  </div>
+                </div>
+
+                <div class="nav-sidebar__search">
+                  <svg class="nav-sidebar__search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 9.5L12 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  <span class="nav-sidebar__search-text">全局搜索</span>
+                  <kbd class="nav-sidebar__search-kbd">⌘K</kbd>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header">
+                    <span>空间</span>
+                    <div class="nav-sidebar__section-actions">
+                      <button class="icon-btn-sm" aria-label="切换空间">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h10M2 10h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      </button>
+                      <button class="icon-btn-sm" aria-label="成员">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+                      </button>
+                      <button class="nav-sidebar__add-space-btn" aria-label="添加空间">+空间</button>
+                    </div>
+                  </div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+                      所有空间
+                    </li>
+                    <li class="nav-sidebar__item nav-sidebar__item--active">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3.5H13l-2.8 2.2 1 3.5L8 9.5 4.8 11.2l1-3.5L3 5.5h3.5L8 2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+                      我的空间
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header"><span>模块</span></div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 6h12M5 1v4M11 1v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      行程
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      待办
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2.5l1 2.5 2.5.4-1.8 1.8.4 2.5L8 8.2 5.9 9.7l.4-2.5L4.5 5.4 7 5l1-2.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><circle cx="12" cy="4" r="1.5" stroke="currentColor" stroke-width="1"/></svg>
+                      发现
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="7" r="1.5" stroke="currentColor" stroke-width="1"/><path d="M2 11l3.5-3 2.5 2 4-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      相册
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2h8l2 2v9a1 1 0 01-1 1H3a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.2"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      备忘录
+                    </li>
+                    <li class="nav-sidebar__item nav-sidebar__item--active">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      空间设置
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__bottom">
+                  <div class="nav-sidebar__item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a4 4 0 014 4v1.5l1 2H3l1-2V6a4 4 0 014-4z" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 13.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    通知
+                  </div>
+                  <div class="nav-sidebar__item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    设置
+                  </div>
+                </div>
+              </nav>
+
+              <div class="space-settings">
+                <section class="space-settings__content">
+                  <div class="space-settings__top">
+                    <h3 class="space-settings__menu-title">空间设置</h3>
+                    <p class="space-settings__menu-subtitle">管理空间资料、成员和权限。</p>
+
+                    <ul class="space-settings__menu-list">
+                      <li class="space-settings__menu-item space-settings__menu-item--active">
+                        <div class="space-settings__menu-main">空间信息</div>
+                        <div class="space-settings__menu-desc">空间设置</div>
+                      </li>
+                      <li class="space-settings__menu-item">
+                        <div class="space-settings__menu-main">成员</div>
+                        <div class="space-settings__menu-desc">邀请成员</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="space-settings__cards">
+                    <article class="space-settings__card">
+                      <div class="space-settings__card-row">
+                        <span class="space-settings__label">空间名称</span>
+                        <span class="space-settings__value">我的空间</span>
+                      </div>
+                      <div class="space-settings__card-row">
+                        <span class="space-settings__label">图标</span>
+                        <span class="space-settings__avatar">我</span>
+                      </div>
+                    </article>
+                  </div>
+
+                  <button class="space-settings__delete-btn">删除空间</button>
+                </section>
+
+                <aside class="space-settings__detail">
+                  <div class="space-settings__detail-top">
+                    <div class="space-settings__detail-icon">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.1"/><path d="M4 2.5v9M2 5h10" stroke="currentColor" stroke-width="1.1"/></svg>
+                    </div>
+                    <span class="space-settings__detail-title">空间信息</span>
+                    <button class="icon-btn-sm" aria-label="关闭">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+
+                  <div class="space-settings__detail-box">
+                    <div class="space-settings__detail-name">我的空间</div>
+                    <div class="space-settings__detail-desc">暂无空间描述</div>
+                  </div>
+
+                  <button class="space-settings__danger-btn">删除空间</button>
+                </aside>
+              </div>
             </div>
           </div>
         </div>
