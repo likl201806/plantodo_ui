@@ -28,15 +28,17 @@
 .memo-main {
   flex: 1;
   display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   border-right: 1px solid var(--border);
 }
 
 .memo-main__header {
-  width: 190px;
-  min-width: 190px;
-  border-right: 1px solid var(--border);
+  width: 100%;
+  min-width: 0;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
   background: #fbfbfb;
   padding: 12px 10px;
   display: flex;

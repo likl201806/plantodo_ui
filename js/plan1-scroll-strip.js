@@ -14,6 +14,7 @@
     const list = viewport && viewport.firstElementChild;
     const prevBtn = strip.querySelector('.scroll-strip__btn--prev');
     const nextBtn = strip.querySelector('.scroll-strip__btn--next');
+    const shouldAlwaysShowArrows = strip.dataset.scrollStripShowArrows === 'always';
 
     if (!viewport || !list || !prevBtn || !nextBtn) return;
 
@@ -38,12 +39,14 @@
       const maxScroll = getMaxScroll();
       const overflow = maxScroll > 1;
 
-      prevBtn.hidden = !overflow;
-      nextBtn.hidden = !overflow;
+      prevBtn.hidden = !overflow && !shouldAlwaysShowArrows;
+      nextBtn.hidden = !overflow && !shouldAlwaysShowArrows;
 
       if (!overflow) {
         scrollOffset = 0;
         applyScroll();
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
         return;
       }
 
