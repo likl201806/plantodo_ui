@@ -265,8 +265,8 @@
 
 /* ---- 右侧：照片详情 ---- */
 .album-detail {
-  flex: 1 1 0;
-  min-width: 0;
+  width: 316px;
+  min-width: 316px;
   background: var(--bg-white);
   border-left: 1px solid var(--border);
   display: flex;

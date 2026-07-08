@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/plan2-calendar.css" />
   <link rel="stylesheet" href="css/plan3-discovery.css" />
   <link rel="stylesheet" href="css/plan4-album.css" />
+  <link rel="stylesheet" href="css/plan5-memo.css" />
 </head>
 <body>
   <div class="prototype-shell">
@@ -34,6 +35,10 @@
         <button class="ui-gallery__item" data-ui="plan4-album">
           <span class="ui-gallery__item-index">04</span>
           <span class="ui-gallery__item-label">图4-mac相册</span>
+        </button>
+        <button class="ui-gallery__item" data-ui="plan5-memo">
+          <span class="ui-gallery__item-index">05</span>
+          <span class="ui-gallery__item-label">图5-mac备忘录</span>
         </button>
         <!-- 后续 UI 图在此追加 -->
       </nav>
@@ -1066,6 +1071,242 @@
                   <button class="album-detail__btn album-detail__btn--primary">预览大图</button>
                   <button class="album-detail__btn">编辑描述</button>
                 </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 图5-mac备忘录 ========== -->
+        <div class="plan5-memo" data-ui-panel="plan5-memo" style="display: none;">
+          <div class="mac-window">
+            <header class="mac-window__titlebar">
+              <div class="mac-window__traffic-lights">
+                <span class="traffic-light traffic-light--close"></span>
+                <span class="traffic-light traffic-light--minimize"></span>
+                <span class="traffic-light traffic-light--maximize"></span>
+              </div>
+              <span class="mac-window__app-name">PlanTodo</span>
+              <div class="mac-window__titlebar-actions">
+                <button class="btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  备忘录
+                </button>
+                <button class="btn-icon" aria-label="切换侧边栏">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M11 3v12" stroke="currentColor" stroke-width="1.3"/></svg>
+                </button>
+              </div>
+            </header>
+
+            <div class="mac-window__body">
+              <!-- 最左侧导航栏 -->
+              <nav class="nav-sidebar">
+                <div class="nav-sidebar__user">
+                  <div class="nav-sidebar__avatar">L</div>
+                  <div class="nav-sidebar__user-info">
+                    <div class="nav-sidebar__user-name">Lisa</div>
+                    <div class="nav-sidebar__user-space">共享空间</div>
+                  </div>
+                </div>
+
+                <div class="nav-sidebar__search">
+                  <svg class="nav-sidebar__search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 9.5L12 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  <span class="nav-sidebar__search-text">全局搜索</span>
+                  <kbd class="nav-sidebar__search-kbd">⌘K</kbd>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header">
+                    <span>空间</span>
+                    <div class="nav-sidebar__section-actions">
+                      <button class="icon-btn-sm" aria-label="切换空间">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h10M2 10h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      </button>
+                      <button class="icon-btn-sm" aria-label="成员">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+                      </button>
+                      <button class="nav-sidebar__add-space-btn" aria-label="添加空间">+空间</button>
+                    </div>
+                  </div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+                      所有空间
+                    </li>
+                    <li class="nav-sidebar__item nav-sidebar__item--active">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3.5H13l-2.8 2.2 1 3.5L8 9.5 4.8 11.2l1-3.5L3 5.5h3.5L8 2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+                      我的空间
+                      <span class="nav-sidebar__members">
+                        <span class="member-dot member-dot--1"></span>
+                        <span class="member-dot member-dot--2"></span>
+                        <svg class="nav-sidebar__crown" width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 9h8L6.5 3 5 6 3.5 3 2 9z" fill="#F5A623"/></svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header"><span>模块</span></div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 6h12M5 1v4M11 1v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      行程
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      待办
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2.5l1 2.5 2.5.4-1.8 1.8.4 2.5L8 8.2 5.9 9.7l.4-2.5L4.5 5.4 7 5l1-2.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><circle cx="12" cy="4" r="1.5" stroke="currentColor" stroke-width="1"/></svg>
+                      发现
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="7" r="1.5" stroke="currentColor" stroke-width="1"/><path d="M2 11l3.5-3 2.5 2 4-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      相册
+                    </li>
+                    <li class="nav-sidebar__item nav-sidebar__item--active">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2h8l2 2v9a1 1 0 01-1 1H3a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.2"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      备忘录
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      空间设置
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__bottom">
+                  <div class="nav-sidebar__item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a4 4 0 014 4v1.5l1 2H3l1-2V6a4 4 0 014-4z" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 13.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    通知
+                    <span class="badge-red">53</span>
+                  </div>
+                  <div class="nav-sidebar__item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    设置
+                  </div>
+                </div>
+              </nav>
+
+              <!-- 中间：文件夹 + 备忘录列表 -->
+              <div class="memo-main">
+                <header class="memo-main__header">
+                  <div class="memo-main__title-row">
+                    <span class="memo-main__title">备忘录</span>
+                    <button class="memo-main__add-btn" aria-label="新建备忘录文件夹">+</button>
+                  </div>
+                  <ul class="memo-folder-list">
+                    <li class="memo-folder-list__item memo-folder-list__item--active">
+                      <span class="memo-folder-list__name">所有备忘录</span>
+                      <span class="memo-folder-list__count">9</span>
+                    </li>
+                    <li class="memo-folder-list__item">
+                      <span class="memo-folder-list__name">AI私教</span>
+                      <span class="memo-folder-list__count">1</span>
+                      <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                    </li>
+                    <li class="memo-folder-list__item">
+                      <span class="memo-folder-list__name">远维</span>
+                      <span class="memo-folder-list__count">2</span>
+                      <button class="memo-folder-list__delete" aria-label="删除文件夹">🗑</button>
+                    </li>
+                  </ul>
+                </header>
+
+                <section class="memo-list">
+                  <article class="memo-card memo-card--selected">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      </span>
+                      <h3 class="memo-card__title">PlanTodo的问题</h3>
+                    </div>
+                    <p class="memo-card__meta">0/15 已完成 · 默认 · 今天 10:21</p>
+                  </article>
+
+                  <article class="memo-card">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      </span>
+                      <h3 class="memo-card__title">一刀大概包含多少 token 的付费比较合理</h3>
+                    </div>
+                    <p class="memo-card__desc">6 月末前 8 月末做成下一个营收，AI 分了可见点，日付 200 万，总计 30 万。</p>
+                    <p class="memo-card__meta">默认 · 备注详情 · 今天 00:57</p>
+                  </article>
+
+                  <article class="memo-card">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+                      <h3 class="memo-card__title">YouNote 缺陷</h3>
+                    </div>
+                    <p class="memo-card__meta">0/1 已完成 · 默认 · 2026-06-30</p>
+                  </article>
+
+                  <article class="memo-card">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+                      <h3 class="memo-card__title">终端打开 Keychain Access</h3>
+                    </div>
+                    <p class="memo-card__desc">open -a "Keychain Access"</p>
+                    <p class="memo-card__meta">运维 · 2026-06-30</p>
+                  </article>
+
+                  <article class="memo-card">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+                      <h3 class="memo-card__title">服务器端部署命令</h3>
+                    </div>
+                    <p class="memo-card__meta">运维 · 2026-06-30</p>
+                  </article>
+
+                  <article class="memo-card">
+                    <div class="memo-card__title-row">
+                      <span class="memo-card__icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2.5" width="10" height="9" rx="1.2" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 1.5v2M9.5 1.5v2M2 5h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+                      <h3 class="memo-card__title">豆包 API Key</h3>
+                    </div>
+                    <p class="memo-card__meta">默认 · 2026-06-27</p>
+                  </article>
+                </section>
+              </div>
+
+              <!-- 右侧：备忘录详情 -->
+              <aside class="memo-detail">
+                <div class="memo-detail__topbar">
+                  <span>备忘录详情</span>
+                  <button class="icon-btn-sm" aria-label="关闭">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+
+                <div class="memo-detail__header-card">
+                  <div class="memo-detail__title">PlanTodo的问题</div>
+                  <div class="memo-detail__meta">今天 10:21 · 默认</div>
+                </div>
+
+                <div class="memo-detail__counter-row">
+                  <div class="memo-detail__counter-card">
+                    <div class="memo-detail__counter-value">0/15</div>
+                    <div class="memo-detail__counter-label">清单总览</div>
+                  </div>
+                  <div class="memo-detail__counter-card">
+                    <div class="memo-detail__counter-value">0</div>
+                    <div class="memo-detail__counter-label">照片附件</div>
+                  </div>
+                </div>
+
+                <div class="memo-detail__section-title">清单</div>
+                <ul class="memo-checklist">
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>备忘录的内容不可以复制</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>备忘录的待办事项应该可以编辑，只有左侧按钮是修改状态的</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>备忘录的详情描述应该可以编辑</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>备忘录的待办事项的时间线不应该显示在右侧栏</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>右侧栏的框底应该增加</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>日历小组件 +tabbar 自定义</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>iPhone 的待办文件夹没有显示进行中，已完成等数量</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>iPhone 版的备忘录详情的详情描述不可以选择</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>iPhone 版的编辑备忘录选择附件提示“无法访问文件”，待办详情也有这样的问题，但已编辑中添加附件正常</li>
+                  <li class="memo-checklist__item"><span class="memo-checklist__dot"></span>iPhone 版的备忘录详情的任务事项应该可以选择内容，点击左侧应该可以修改待办事项的完成状态</li>
+                </ul>
               </aside>
             </div>
           </div>
