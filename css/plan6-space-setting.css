@@ -28,7 +28,8 @@
   flex: 1;
   min-width: 0;
   display: grid;
-  grid-template-columns: 1fr 235px;
+  /* 图6 仅保留左侧内容区域，右侧栏去掉 */
+  grid-template-columns: 1fr;
   overflow: hidden;
 }
 
@@ -205,12 +206,8 @@
 }
 
 .space-settings__detail {
-  border-left: 1px solid var(--border);
-  padding: 12px;
-  background: #fcfcfc;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  /* 去掉图6右侧详情栏，仅在需要时再恢复 */
+  display: none;
 }
 
 .space-settings__detail-top {
