@@ -1,0 +1,389 @@
+/* ========== 图4-mac相册：PlanTodo 相册 / 照片管理界面 ========== */
+
+.plan4-album {
+  --green: #42b883;
+  --green-light: #e8f7f0;
+  --green-hover: #3aa876;
+  --bg-sidebar: #f7f7f8;
+  --bg-white: #ffffff;
+  --border: #ededed;
+  --border-light: #f0f0f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #8c8c8c;
+  --text-muted: #b0b0b0;
+  --orange: #f5a623;
+  --red: #e74c3c;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- 中间栏：照片文件夹（上）+内容（下） ---- */
+.album-folder-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  width: max-content;
+}
+
+.album-folder-list__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  flex-shrink: 0;
+}
+
+.album-folder-list__item:hover {
+  border-color: #d8d8d8;
+}
+
+.album-folder-list__item--active {
+  background: var(--green-light);
+  color: var(--green);
+  font-weight: 500;
+}
+
+.album-folder-list__name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-folder-list__count {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.album-folder-list__item--active .album-folder-list__count {
+  color: var(--green);
+}
+
+/* ---- 主内容区：照片网格 ---- */
+.album-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--bg-white);
+}
+
+.album-main__header {
+  flex-shrink: 0;
+  padding: 12px 24px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.album-main__folder-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.album-main__folder-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.album-main__folder-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border: none;
+  background: var(--green);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.album-main__folder-add:hover {
+  background: var(--green-hover);
+}
+
+.album-main__select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.album-main__select-btn:hover {
+  background: var(--green-hover);
+}
+
+.album-main__select-btn--danger {
+  background: #d86f78;
+}
+
+.album-main__select-btn--danger:hover {
+  background: #ca626b;
+}
+
+.album-main__select-icon {
+  display: none;
+}
+
+.album-main__select-icon--check {
+  display: block;
+}
+
+.album-main__select-btn--danger .album-main__select-icon--check {
+  display: none;
+}
+
+.album-main__select-btn--danger .album-main__select-icon--close {
+  display: block;
+}
+
+.album-main__content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-main__content-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 24px 0;
+}
+
+.album-grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 24px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  align-content: start;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.album-card__thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.album-card:hover .album-card__thumb {
+  border-color: #d8d8d8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.album-card--selected .album-card__thumb {
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px rgba(66, 184, 131, 0.35);
+}
+
+/* 手写便签风格的照片占位图 */
+.photo-note {
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 8px,
+      rgba(90, 70, 130, 0.28) 8px,
+      rgba(90, 70, 130, 0.28) 9px
+    ),
+    linear-gradient(135deg, #d8d0ec 0%, #cfd0ee 100%);
+}
+
+.photo-note--titled {
+  position: relative;
+}
+
+.photo-note--titled::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(70, 55, 110, 0.45);
+}
+
+.album-card__title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.album-card__meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* ---- 右侧：照片详情 ---- */
+.album-detail {
+  flex: 1 1 0;
+  min-width: 0;
+  background: var(--bg-white);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  overflow-y: auto;
+}
+
+.album-detail__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.album-detail__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.album-detail__preview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.album-detail__field {
+  margin-bottom: 16px;
+}
+
+.album-detail__label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.album-detail__desc-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.album-detail__desc-empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.album-detail__desc-date {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.album-detail__value-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.album-detail__tag-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--bg-white);
+  cursor: pointer;
+}
+
+.album-detail__tag-picker:hover {
+  border-color: #d8d8d8;
+  color: var(--text-primary);
+}
+
+.album-detail__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.album-detail__btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  color: var(--text-primary);
+}
+
+.album-detail__btn--primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.album-detail__btn--primary:hover {
+  background: var(--green-hover);
+  border-color: var(--green-hover);
+}
