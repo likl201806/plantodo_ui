@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/plan5-memo.css" />
   <link rel="stylesheet" href="css/plan6-space-setting.css" />
   <link rel="stylesheet" href="css/plan7-notification.css" />
+  <link rel="stylesheet" href="css/plan8-setting.css" />
 </head>
 <body>
   <div class="prototype-shell">
@@ -44,11 +45,15 @@
         </button>
         <button class="ui-gallery__item" data-ui="plan6-space-setting">
           <span class="ui-gallery__item-index">06</span>
-          <span class="ui-gallery__item-label">图6-空间设置</span>
+          <span class="ui-gallery__item-label">图6-mac空间设置</span>
         </button>
         <button class="ui-gallery__item" data-ui="plan7-notification">
           <span class="ui-gallery__item-index">07</span>
-          <span class="ui-gallery__item-label">图7-通知</span>
+          <span class="ui-gallery__item-label">图7-mac通知</span>
+        </button>
+        <button class="ui-gallery__item" data-ui="plan8-setting">
+          <span class="ui-gallery__item-index">08</span>
+          <span class="ui-gallery__item-label">图8-mac设置</span>
         </button>
         <!-- 后续 UI 图在此追加 -->
       </nav>
@@ -1342,7 +1347,7 @@
           </div>
         </div>
 
-        <!-- ========== 图6-空间设置 ========== -->
+        <!-- ========== 图6-mac空间设置 ========== -->
         <div class="plan6-space-setting" data-ui-panel="plan6-space-setting" style="display: none;">
           <div class="mac-window">
             <header class="mac-window__titlebar">
@@ -1494,7 +1499,7 @@
           </div>
         </div>
 
-        <!-- ========== 图7-通知 ========== -->
+        <!-- ========== 图7-mac通知 ========== -->
         <div class="plan7-notification" data-ui-panel="plan7-notification" style="display: none;">
           <div class="mac-window">
             <header class="mac-window__titlebar">
@@ -1704,6 +1709,196 @@
                   </article>
                 </section>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 图8-mac设置 ========== -->
+        <div class="plan8-setting" data-ui-panel="plan8-setting" style="display: none;">
+          <div class="mac-window">
+            <header class="mac-window__titlebar">
+              <div class="mac-window__traffic-lights">
+                <span class="traffic-light traffic-light--close"></span>
+                <span class="traffic-light traffic-light--minimize"></span>
+                <span class="traffic-light traffic-light--maximize"></span>
+              </div>
+              <span class="mac-window__app-name">PlanTodo</span>
+            </header>
+
+            <div class="mac-window__body">
+              <nav class="nav-sidebar">
+                <div class="nav-sidebar__user">
+                  <div class="nav-sidebar__avatar">L</div>
+                  <div class="nav-sidebar__user-info">
+                    <div class="nav-sidebar__user-name">Lisa</div>
+                    <div class="nav-sidebar__user-space">共享空间</div>
+                  </div>
+                </div>
+
+                <div class="nav-sidebar__search">
+                  <svg class="nav-sidebar__search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 9.5L12 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  <span class="nav-sidebar__search-text">全局搜索</span>
+                  <kbd class="nav-sidebar__search-kbd">⌘K</kbd>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header">
+                    <span>空间</span>
+                    <div class="nav-sidebar__section-actions">
+                      <button class="icon-btn-sm" aria-label="切换空间">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M2 7h10M2 10h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      </button>
+                      <button class="icon-btn-sm" aria-label="成员">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" stroke-width="1.2"/><circle cx="10" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+                      </button>
+                      <button class="nav-sidebar__add-space-btn" aria-label="添加空间">+空间</button>
+                    </div>
+                  </div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="10" width="5" height="3" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+                      所有空间
+                      <span class="nav-sidebar__item-count">今天 1 项</span>
+                    </li>
+                    <li class="nav-sidebar__item nav-sidebar__item--active">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3.5H13l-2.8 2.2 1 3.5L8 9.5 4.8 11.2l1-3.5L3 5.5h3.5L8 2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+                      我的空间
+                      <span class="nav-sidebar__members">
+                        <span class="member-dot member-dot--1"></span>
+                        <span class="member-dot member-dot--2"></span>
+                        <svg class="nav-sidebar__crown" width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 9h8L6.5 3 5 6 3.5 3 2 9z" fill="#F5A623"/></svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__section">
+                  <div class="nav-sidebar__section-header"><span>模块</span></div>
+                  <ul class="nav-sidebar__list">
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 6h12M5 1v4M11 1v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      行程
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      待办
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2.5l1 2.5 2.5.4-1.8 1.8.4 2.5L8 8.2 5.9 9.7l.4-2.5L4.5 5.4 7 5l1-2.5z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><circle cx="12" cy="4" r="1.5" stroke="currentColor" stroke-width="1"/></svg>
+                      发现
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="7" r="1.5" stroke="currentColor" stroke-width="1"/><path d="M2 11l3.5-3 2.5 2 4-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      相册
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2h8l2 2v9a1 1 0 01-1 1H3a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.2"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      备忘录
+                    </li>
+                    <li class="nav-sidebar__item">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                      空间设置
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="nav-sidebar__bottom">
+                  <div class="nav-sidebar__item">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a4 4 0 014 4v1.5l1 2H3l1-2V6a4 4 0 014-4z" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 13.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    通知
+                  </div>
+                  <div class="nav-sidebar__item nav-sidebar__item--active">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    设置
+                  </div>
+                </div>
+              </nav>
+
+              <section class="setting-main">
+                <div class="setting-content">
+                  <div class="setting-menu">
+                    <h3 class="setting-menu__title">App 设置</h3>
+                    <ul class="setting-menu__list">
+                      <li class="setting-menu__item setting-menu__item--active">
+                        <span class="setting-menu__icon">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.8 1.7h2.4l.4 1.4 1.4.6 1.3-.7 1.2 2.1-1 1 .1 1.6 1.2.9-1.2 2.1-1.4-.7-1.4.6-.4 1.4H5.8l-.4-1.4-1.4-.6-1.4.7-1.2-2.1 1.2-.9.1-1.6-1-1L2.5 3l1.3.7 1.4-.6.6-1.4z" stroke="currentColor" stroke-width="1"/></svg>
+                        </span>
+                        <span class="setting-menu__text">应用设置</span>
+                      </li>
+                      <li class="setting-menu__item">
+                        <span class="setting-menu__icon">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.7v2.2M7 10.1v2.2M1.7 7h2.2M10.1 7h2.2M3.2 3.2l1.6 1.6M9.2 9.2l1.6 1.6M3.2 10.8l1.6-1.6M9.2 4.8l1.6-1.6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><circle cx="7" cy="7" r="2.2" stroke="currentColor" stroke-width="1.1"/></svg>
+                        </span>
+                        <span class="setting-menu__text">设置通知</span>
+                      </li>
+                      <li class="setting-menu__item">
+                        <span class="setting-menu__icon">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5h10v9H2z" stroke="currentColor" stroke-width="1.1"/><path d="M2 5h10M5 2.5v9" stroke="currentColor" stroke-width="1.1"/></svg>
+                        </span>
+                        <span class="setting-menu__text">节日</span>
+                      </li>
+                      <li class="setting-menu__item">
+                        <span class="setting-menu__icon">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.8" stroke="currentColor" stroke-width="1.1"/><path d="M7 4.7v2.7l1.8 1.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                        </span>
+                        <span class="setting-menu__text">关于</span>
+                        <span class="setting-menu__version">1.0.6</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="setting-card">
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">语言</div>
+                        <div class="setting-row__desc">切换 App 显示语言</div>
+                      </div>
+                      <div class="setting-row__value">中文</div>
+                    </div>
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">一周的开始</div>
+                        <div class="setting-row__desc">影响每周视图和日程排列</div>
+                      </div>
+                      <div class="setting-row__value">星期日</div>
+                    </div>
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">周数</div>
+                        <div class="setting-row__desc">在日历中显示周数</div>
+                      </div>
+                      <label class="setting-switch" aria-label="切换周数显示">
+                        <input type="checkbox" checked />
+                        <span class="setting-switch__track"></span>
+                      </label>
+                    </div>
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">阴历</div>
+                        <div class="setting-row__desc">在日历中显示农历信息</div>
+                      </div>
+                      <label class="setting-switch" aria-label="切换阴历显示">
+                        <input type="checkbox" checked />
+                        <span class="setting-switch__track"></span>
+                      </label>
+                    </div>
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">默认地图应用</div>
+                        <div class="setting-row__desc">点击地点时使用的地图应用</div>
+                      </div>
+                      <div class="setting-row__value">高德地图</div>
+                    </div>
+                    <div class="setting-row">
+                      <div class="setting-row__text">
+                        <div class="setting-row__title">外观</div>
+                        <div class="setting-row__desc">让跟进事项与 iPhone 和 Apple Watch 关联</div>
+                      </div>
+                      <div class="setting-row__value">跟随设备设置</div>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
             </div>
           </div>
         </div>
