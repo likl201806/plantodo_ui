@@ -156,50 +156,97 @@
                       </button>
                     </div>
                   </div>
-                  <ul class="folder-list folder-list--horizontal">
-                    <li class="folder-list__item">
-                      <span class="folder-list__name">工作日</span>
-                      <span class="folder-list__count">0</span>
-                      <button class="folder-list__delete" aria-label="删除">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </button>
-                    </li>
-                    <li class="folder-list__item folder-list__item--active">
-                      <span class="folder-list__name">远景计划</span>
-                      <span class="folder-list__count">2</span>
-                      <button class="folder-list__delete" aria-label="删除">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </button>
-                    </li>
-                    <li class="folder-list__item">
-                      <span class="folder-list__name">中期计划</span>
-                      <span class="folder-list__count">1</span>
-                      <button class="folder-list__delete" aria-label="删除">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </button>
-                    </li>
-                  </ul>
+                  <div class="scroll-strip" data-scroll-strip>
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--prev" aria-label="向左滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L4 6l3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="scroll-strip__viewport">
+                      <ul class="folder-list folder-list--horizontal">
+                        <li class="folder-list__item">
+                          <span class="folder-list__name">工作日</span>
+                          <span class="folder-list__count">0</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                        <li class="folder-list__item folder-list__item--active">
+                          <span class="folder-list__name">远景计划</span>
+                          <span class="folder-list__count">2</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                        <li class="folder-list__item">
+                          <span class="folder-list__name">中期计划</span>
+                          <span class="folder-list__count">1</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                        <li class="folder-list__item">
+                          <span class="folder-list__name">短期冲刺</span>
+                          <span class="folder-list__count">3</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                        <li class="folder-list__item">
+                          <span class="folder-list__name">个人成长</span>
+                          <span class="folder-list__count">5</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                        <li class="folder-list__item">
+                          <span class="folder-list__name">团队协作</span>
+                          <span class="folder-list__count">2</span>
+                          <button class="folder-list__delete" aria-label="删除">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 4h8M5.5 4V3h3v1M5 4v7M7 4v7M9 4v7M4 4l.5 8h5L10 4" stroke="#E74C3C" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--next" aria-label="向右滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L8 6l-3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
                 </div>
 
                 <div class="todo-center-column__header-row">
                   <div class="todo-center-column__header-label"><span>状态筛选</span></div>
-                  <ul class="filter-list filter-list--horizontal">
-                    <li class="filter-list__item filter-list__item--active">
-                      <span>全部</span><span class="filter-list__count">2</span>
-                    </li>
-                    <li class="filter-list__item">
-                      <span>待办</span><span class="filter-list__count">2</span>
-                    </li>
-                    <li class="filter-list__item">
-                      <span>进行中</span><span class="filter-list__count">0</span>
-                    </li>
-                    <li class="filter-list__item">
-                      <span>已完成</span><span class="filter-list__count">0</span>
-                    </li>
-                    <li class="filter-list__item">
-                      <span>回收站</span><span class="filter-list__count">0</span>
-                    </li>
-                  </ul>
+                  <div class="scroll-strip" data-scroll-strip>
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--prev" aria-label="向左滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L4 6l3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="scroll-strip__viewport">
+                      <ul class="filter-list filter-list--horizontal">
+                        <li class="filter-list__item filter-list__item--active">
+                          <span>全部</span><span class="filter-list__count">2</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>待办</span><span class="filter-list__count">2</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>进行中</span><span class="filter-list__count">0</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>已完成</span><span class="filter-list__count">0</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>回收站</span><span class="filter-list__count">0</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>已归档</span><span class="filter-list__count">0</span>
+                        </li>
+                        <li class="filter-list__item">
+                          <span>已逾期</span><span class="filter-list__count">1</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <button type="button" class="scroll-strip__btn scroll-strip__btn--next" aria-label="向右滚动" hidden>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L8 6l-3.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
                 </div>
               </header>
 
@@ -302,5 +349,6 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/plan1-scroll-strip.js"></script>
 </body>
 </html>
