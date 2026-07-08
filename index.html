@@ -147,17 +147,15 @@
               <!-- 中间栏：头部文件夹/筛选 + 下方任务列表 -->
               <div class="todo-center-column">
               <header class="todo-center-column__header">
-                <div class="todo-center-column__header-row">
-                  <div class="todo-center-column__header-label">
-                    <span>待办文件夹</span>
-                    <div class="todo-center-column__header-actions">
+                <div class="todo-center-column__header-row todo-center-column__header-row--folder">
+                  <div class="todo-center-column__header-bar">
+                    <div class="todo-center-column__header-label">
+                      <span>待办文件夹</span>
                       <button class="icon-btn-sm" aria-label="编辑">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9.5 2.5l2 2-7 7H2.5v-2l7-7z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
                       </button>
-                      <button class="icon-btn-sm" aria-label="添加">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-                      </button>
                     </div>
+                    <button type="button" class="nav-sidebar__add-space-btn" aria-label="添加待办文件夹">+待办文件夹</button>
                   </div>
                   <div class="scroll-strip" data-scroll-strip>
                     <button type="button" class="scroll-strip__btn scroll-strip__btn--prev" aria-label="向左滚动" hidden>
