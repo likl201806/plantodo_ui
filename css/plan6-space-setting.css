@@ -43,9 +43,9 @@
 }
 
 .space-settings__menu-title {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.25;
+  color: var(--text-primary);
 }
 
 .space-settings__menu-subtitle {
