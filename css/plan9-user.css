@@ -24,7 +24,7 @@
   background: #fbfbfb;
 }
 
-/* 页面容器：左侧表单 + 右侧配置 */
+/* 页面容器：顶部菜单 + 下方用户资料 */
 .plan9-user .user-page {
   flex: 1;
   min-width: 0;
@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  background: #fbfbfb;
 }
 
 .plan9-user .user-page__main {
@@ -72,22 +73,8 @@
 .plan9-user .user-page__columns {
   flex: 1;
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  align-items: stretch;
   min-height: 0;
-}
-
-.plan9-user .user-menu {
-  width: 170px;
-  flex-shrink: 0;
-}
-
-.plan9-user .user-menu__card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  min-height: 100%;
-  padding: 14px 14px 12px;
 }
 
 .plan9-user .user-menu__header {
@@ -98,9 +85,9 @@
 }
 
 .plan9-user .user-menu__title {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.3;
-  font-weight: 800;
+  font-weight: 600;
   color: #202020;
 }
 
@@ -129,17 +116,28 @@
   margin-top: 14px;
 }
 
+.plan9-user .user-menu__list--horizontal {
+  display: flex;
+  gap: 8px;
+}
+
+.plan9-user .user-menu__list--horizontal .user-menu__item {
+  width: auto;
+  flex: 0 0 auto;
+  min-width: 124px;
+}
+
 .plan9-user .user-menu__item {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 12px 12px;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  color: #232323;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: #fff;
+  color: #5b5b5b;
   text-align: left;
   cursor: pointer;
 }
@@ -148,8 +146,14 @@
   margin-top: 6px;
 }
 
+.plan9-user .user-menu__list--horizontal .user-menu__item + .user-menu__item {
+  margin-top: 0;
+}
+
 .plan9-user .user-menu__item--active {
   background: #e9f7f0;
+  border-color: #d0ebde;
+  color: #2e8b65;
 }
 
 .plan9-user .user-menu__item-label {
@@ -166,18 +170,36 @@
 .plan9-user .user-profile {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+}
+
+.plan9-user .user-profile__top {
+  width: 100%;
+  align-self: stretch;
+  background: #fbfbfb;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 10px;
+  margin: 0 0 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .plan9-user .user-profile__card {
+  width: 560px;
+  max-width: 100%;
   flex: 1;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 9px;
   padding: 16px 16px 14px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow: auto;
 }
 
 .plan9-user .user-profile__card-header {
@@ -380,71 +402,5 @@
   background: var(--green-light);
   border-color: #d0ebde;
   color: var(--green);
-}
-
-/* 右侧用户配置 */
-.plan9-user .user-config {
-  width: 300px;
-  flex-shrink: 0;
-}
-
-.plan9-user .user-config__card {
-  flex: 1;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 16px 14px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-.plan9-user .user-config__title {
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.plan9-user .user-config__member-title {
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.plan9-user .user-config__share-title {
-  font-size: 12px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.plan9-user .user-config__desc {
-  font-size: 11px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-
-.plan9-user .user-config__actions {
-  display: flex;
-  gap: 10px;
-}
-
-.plan9-user .user-config__btn {
-  flex: 1;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid #e6e6e6;
-  background: #fff;
-  color: #4b4b4b;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.plan9-user .user-config__btn--primary {
-  border: none;
-  background: var(--green);
-  color: #fff;
 }
 
