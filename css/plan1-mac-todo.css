@@ -610,8 +610,8 @@
 
 /* ---- 右侧详情面板 ---- */
 .detail-panel {
-  width: 300px;
-  min-width: 300px;
+  flex: 1;
+  min-width: 0;
   background: var(--bg-white);
   border-left: 1px solid var(--border);
   display: flex;
