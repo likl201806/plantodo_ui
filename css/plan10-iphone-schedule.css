@@ -1,0 +1,368 @@
+/* ========== 图10-iphone日程：PlanTodo iPhone 月历 / 行程界面 ========== */
+
+.plan10-iphone-schedule {
+  --green: #42b883;
+  --green-light: #e8f7f0;
+  --green-soft: #ecf9f3;
+  --bg-white: #ffffff;
+  --border: #ededed;
+  --border-light: #f0f0f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #8c8c8c;
+  --text-muted: #b8b8b8;
+  --text-faded: #c8c8c8;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- iPhone 外框 ---- */
+.iphone-frame {
+  width: 390px;
+  height: 844px;
+  background: #000;
+  border-radius: 54px;
+  padding: 12px;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.iphone-frame::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 34px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+.iphone-frame__screen {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-white);
+  border-radius: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ---- iOS 状态栏 ---- */
+.iphone-statusbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 14px 28px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.iphone-statusbar__time {
+  letter-spacing: -0.02em;
+}
+
+.iphone-statusbar__icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.iphone-statusbar__signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 12px;
+}
+
+.iphone-statusbar__signal span {
+  display: block;
+  width: 3px;
+  background: var(--text-primary);
+  border-radius: 1px;
+}
+
+.iphone-statusbar__signal span:nth-child(1) { height: 4px; }
+.iphone-statusbar__signal span:nth-child(2) { height: 6px; }
+.iphone-statusbar__signal span:nth-child(3) { height: 8px; }
+.iphone-statusbar__signal span:nth-child(4) { height: 10px; }
+
+.iphone-statusbar__wifi svg,
+.iphone-statusbar__battery svg {
+  display: block;
+}
+
+.iphone-statusbar__battery {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ---- 顶部导航栏 ---- */
+.iphone-cal-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 12px;
+}
+
+.iphone-cal-header__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.iphone-cal-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iphone-cal-header__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+}
+
+.iphone-cal-header__month {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.iphone-cal-header__month-arrow {
+  color: var(--text-secondary);
+  margin-left: 2px;
+}
+
+.iphone-cal-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.iphone-cal-header__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---- 月历网格 ---- */
+.iphone-cal-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.iphone-cal-grid__head {
+  display: grid;
+  grid-template-columns: 28px repeat(7, 1fr);
+  padding: 0 8px 8px;
+  flex-shrink: 0;
+}
+
+.iphone-cal-grid__week-label {
+  /* 占位，与周数列对齐 */
+}
+
+.iphone-cal-grid__weekday {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.iphone-cal-grid__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.iphone-cal-week {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 28px repeat(7, 1fr);
+  border-top: 1px solid var(--border-light);
+  min-height: 0;
+}
+
+.iphone-cal-week__num {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 11px;
+  color: var(--text-faded);
+  font-weight: 400;
+}
+
+.iphone-cal-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 2px 4px;
+  position: relative;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.iphone-cal-day__solar {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-radius: 50%;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.iphone-cal-day__lunar {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  line-height: 1.2;
+}
+
+.iphone-cal-day--other .iphone-cal-day__solar {
+  color: var(--text-faded);
+}
+
+.iphone-cal-day--other .iphone-cal-day__lunar {
+  color: var(--text-faded);
+}
+
+.iphone-cal-day--today .iphone-cal-day__solar {
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.iphone-cal-day--today .iphone-cal-day__lunar {
+  color: var(--text-muted);
+}
+
+.iphone-cal-day--event {
+  padding-bottom: 2px;
+}
+
+.iphone-cal-day__event {
+  margin-top: 2px;
+  max-width: calc(100% - 2px);
+  padding: 2px 5px;
+  background: var(--green);
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.3;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---- 底部 Tab 栏 ---- */
+.iphone-tabbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  padding: 6px 8px 28px;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+.iphone-tabbar__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 4px;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.iphone-tabbar__item--active {
+  background: var(--green-soft);
+  border-radius: 14px;
+  margin: 0 2px;
+}
+
+.iphone-tabbar__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.iphone-tabbar__item--active .iphone-tabbar__icon {
+  color: var(--green);
+}
+
+.iphone-tabbar__label {
+  font-size: 10px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.iphone-tabbar__item--active .iphone-tabbar__label {
+  color: var(--green);
+  font-weight: 500;
+}

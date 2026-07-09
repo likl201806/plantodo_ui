@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/plan7-notification.css" />
   <link rel="stylesheet" href="css/plan8-setting.css" />
   <link rel="stylesheet" href="css/plan9-user.css" />
+  <link rel="stylesheet" href="css/plan10-iphone-schedule.css" />
 </head>
 <body>
   <div class="prototype-shell">
@@ -59,6 +60,10 @@
         <button class="ui-gallery__item" data-ui="plan9-user">
           <span class="ui-gallery__item-index">09</span>
           <span class="ui-gallery__item-label">图9-mac用户</span>
+        </button>
+        <button class="ui-gallery__item" data-ui="plan10-iphone-schedule">
+          <span class="ui-gallery__item-index">10</span>
+          <span class="ui-gallery__item-label">图10-iphone日程</span>
         </button>
         <!-- 后续 UI 图在此追加 -->
       </nav>
@@ -2156,6 +2161,184 @@
                   </div>
                 </section>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 图10-iphone日程 ========== -->
+        <div class="plan10-iphone-schedule" data-ui-panel="plan10-iphone-schedule" style="display: none;">
+          <div class="iphone-frame">
+            <div class="iphone-frame__screen">
+              <!-- iOS 状态栏 -->
+              <div class="iphone-statusbar">
+                <span class="iphone-statusbar__time">08:49</span>
+                <div class="iphone-statusbar__icons">
+                  <div class="iphone-statusbar__signal" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <span class="iphone-statusbar__wifi" aria-hidden="true">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 2.5C5.5 2.5 3.2 3.4 1.5 5L0 3.5C2.2 1.3 5 0 8 0s5.8 1.3 8 3.5L14.5 5C12.8 3.4 10.5 2.5 8 2.5zM8 6.5c-1.5 0-2.9.6-3.9 1.6L2.6 6C4.1 4.5 6 3.5 8 3.5s3.9 1 5.4 2.5l-1.5 2.1C10.9 7.1 9.5 6.5 8 6.5zM8 9.5c-.8 0-1.5.3-2.1.9L8 12l2.1-1.6c-.6-.6-1.3-.9-2.1-.9z" fill="currentColor"/></svg>
+                  </span>
+                  <span class="iphone-statusbar__battery" aria-hidden="true">
+                    <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor" stroke-opacity="0.35"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><path d="M23 4v4a1.5 1.5 0 000-4z" fill="currentColor" fill-opacity="0.4"/></svg>
+                    <span>85</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- 顶部导航 -->
+              <header class="iphone-cal-header">
+                <button class="iphone-cal-header__avatar" type="button" aria-label="我的">我</button>
+                <div class="iphone-cal-header__nav">
+                  <button class="iphone-cal-header__nav-btn" type="button" aria-label="上个月">
+                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M8 2L2 8l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="iphone-cal-header__month">
+                    2026年 07月
+                    <svg class="iphone-cal-header__month-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <button class="iphone-cal-header__nav-btn" type="button" aria-label="下个月">
+                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none"><path d="M2 2l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+                <div class="iphone-cal-header__actions">
+                  <button class="iphone-cal-header__action-btn" type="button" aria-label="新建日程">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 4v14M4 11h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </button>
+                  <button class="iphone-cal-header__action-btn" type="button" aria-label="切换视图">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                  </button>
+                </div>
+              </header>
+
+              <!-- 月历 -->
+              <div class="iphone-cal-grid">
+                <div class="iphone-cal-grid__head">
+                  <div class="iphone-cal-grid__week-label"></div>
+                  <div class="iphone-cal-grid__weekday">日</div>
+                  <div class="iphone-cal-grid__weekday">一</div>
+                  <div class="iphone-cal-grid__weekday">二</div>
+                  <div class="iphone-cal-grid__weekday">三</div>
+                  <div class="iphone-cal-grid__weekday">四</div>
+                  <div class="iphone-cal-grid__weekday">五</div>
+                  <div class="iphone-cal-grid__weekday">六</div>
+                </div>
+
+                <div class="iphone-cal-grid__body">
+                  <!-- 第 26 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">26</div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">28</span><span class="iphone-cal-day__lunar">初五</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">29</span><span class="iphone-cal-day__lunar">初六</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">30</span><span class="iphone-cal-day__lunar">初七</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">1</span><span class="iphone-cal-day__lunar">初八</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">2</span><span class="iphone-cal-day__lunar">初九</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">3</span><span class="iphone-cal-day__lunar">初十</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">4</span><span class="iphone-cal-day__lunar">十一</span></div>
+                  </div>
+
+                  <!-- 第 27 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">27</div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">5</span><span class="iphone-cal-day__lunar">十二</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">6</span><span class="iphone-cal-day__lunar">十三</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">7</span><span class="iphone-cal-day__lunar">十四</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--event">
+                      <span class="iphone-cal-day__solar">8</span>
+                      <span class="iphone-cal-day__lunar">十五</span>
+                      <span class="iphone-cal-day__event">去嗨搜过去…</span>
+                    </div>
+                    <div class="iphone-cal-day iphone-cal-day--today">
+                      <span class="iphone-cal-day__solar">9</span>
+                      <span class="iphone-cal-day__lunar">十六</span>
+                    </div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">10</span><span class="iphone-cal-day__lunar">十七</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">11</span><span class="iphone-cal-day__lunar">十八</span></div>
+                  </div>
+
+                  <!-- 第 28 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">28</div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">12</span><span class="iphone-cal-day__lunar">十九</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">13</span><span class="iphone-cal-day__lunar">二十</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">14</span><span class="iphone-cal-day__lunar">廿一</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">15</span><span class="iphone-cal-day__lunar">廿二</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">16</span><span class="iphone-cal-day__lunar">廿三</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">17</span><span class="iphone-cal-day__lunar">廿四</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">18</span><span class="iphone-cal-day__lunar">廿五</span></div>
+                  </div>
+
+                  <!-- 第 29 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">29</div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">19</span><span class="iphone-cal-day__lunar">廿六</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">20</span><span class="iphone-cal-day__lunar">廿七</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">21</span><span class="iphone-cal-day__lunar">廿八</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">22</span><span class="iphone-cal-day__lunar">廿九</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">23</span><span class="iphone-cal-day__lunar">三十</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">24</span><span class="iphone-cal-day__lunar">六月</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">25</span><span class="iphone-cal-day__lunar">初二</span></div>
+                  </div>
+
+                  <!-- 第 30 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">30</div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">26</span><span class="iphone-cal-day__lunar">初三</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">27</span><span class="iphone-cal-day__lunar">初四</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">28</span><span class="iphone-cal-day__lunar">初五</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">29</span><span class="iphone-cal-day__lunar">初六</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">30</span><span class="iphone-cal-day__lunar">初七</span></div>
+                    <div class="iphone-cal-day"><span class="iphone-cal-day__solar">31</span><span class="iphone-cal-day__lunar">初八</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">1</span><span class="iphone-cal-day__lunar">初九</span></div>
+                  </div>
+
+                  <!-- 第 31 周 -->
+                  <div class="iphone-cal-week">
+                    <div class="iphone-cal-week__num">31</div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">2</span><span class="iphone-cal-day__lunar">初十</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">3</span><span class="iphone-cal-day__lunar">十一</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">4</span><span class="iphone-cal-day__lunar">十二</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">5</span><span class="iphone-cal-day__lunar">十三</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">6</span><span class="iphone-cal-day__lunar">十四</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">7</span><span class="iphone-cal-day__lunar">十五</span></div>
+                    <div class="iphone-cal-day iphone-cal-day--other"><span class="iphone-cal-day__solar">8</span><span class="iphone-cal-day__lunar">十六</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 底部 Tab 栏 -->
+              <nav class="iphone-tabbar" aria-label="主导航">
+                <button class="iphone-tabbar__item iphone-tabbar__item--active" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h16M7 2v4M15 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">行程</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">待办</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l1.8 4.2 4.5.4-3.4 3 1 4.4L11 12.5 7.1 14l1-4.4-3.4-3 4.5-.4L11 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">发现</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="9" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M2 14l5-4 3 2.5 4-3.5 6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">相册</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 3h10l3 3v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M6 13h6M6 16h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">备忘录</span>
+                </button>
+              </nav>
             </div>
           </div>
         </div>
