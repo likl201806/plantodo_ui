@@ -1,0 +1,288 @@
+/* ========== 图11-iphone待办文件夹：PlanTodo iPhone 待办文件夹详情 ========== */
+
+.plan11-iphone-todo-folder {
+  --green: #42b883;
+  --green-dark: #3aab78;
+  --green-card: #42b883;
+  --green-soft: #ecf9f3;
+  --bg-page: #f5f5f5;
+  --bg-white: #ffffff;
+  --border: #ededed;
+  --border-light: #f0f0f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #8c8c8c;
+  --text-muted: #b8b8b8;
+  --tag-todo-bg: #fff4e0;
+  --tag-todo-text: #e8a030;
+  --tag-priority-bg: #f0f0f0;
+  --tag-priority-text: #999999;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- 页面布局 ---- */
+.plan11-iphone-todo-folder .iphone-frame__screen {
+  background: var(--bg-page);
+}
+
+.plan11-iphone-todo-folder__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---- 顶部导航栏 ---- */
+.iphone-folder-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 8px;
+  background: var(--bg-white);
+}
+
+.iphone-folder-header__back,
+.iphone-folder-header__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.iphone-folder-header__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+}
+
+/* ---- 绿色统计卡片 ---- */
+.iphone-folder-card {
+  flex-shrink: 0;
+  margin: 12px 16px 0;
+  padding: 18px 18px 16px;
+  background: var(--green-card);
+  border-radius: 16px;
+  color: #fff;
+}
+
+.iphone-folder-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.iphone-folder-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.iphone-folder-card__name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.iphone-folder-card__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.iphone-folder-card__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.iphone-folder-card__stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.iphone-folder-card__stat-label {
+  font-size: 12px;
+  opacity: 0.92;
+  white-space: nowrap;
+}
+
+/* ---- 筛选标签栏 ---- */
+.iphone-folder-tabs {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  background: var(--bg-page);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.iphone-folder-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.iphone-folder-tabs__item {
+  flex-shrink: 0;
+  padding: 7px 16px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.iphone-folder-tabs__item--active {
+  background: var(--green);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ---- 任务列表区域 ---- */
+.iphone-folder-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--bg-page);
+}
+
+.iphone-folder-list {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  background: var(--bg-white);
+  border-radius: 16px 16px 0 0;
+}
+
+.iphone-folder-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.iphone-folder-task:last-of-type {
+  border-bottom: none;
+}
+
+.iphone-folder-task__checkbox {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 50%;
+  background: var(--bg-white);
+}
+
+.iphone-folder-task__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.iphone-folder-task__title {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.iphone-folder-task__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.iphone-folder-task__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.iphone-folder-task__tag--todo {
+  background: var(--tag-todo-bg);
+  color: var(--tag-todo-text);
+}
+
+.iphone-folder-task__tag--priority {
+  background: var(--tag-priority-bg);
+  color: var(--tag-priority-text);
+}
+
+.iphone-folder-task__time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.iphone-folder-task__more {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: -2px;
+  margin-right: -6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ---- 底部加载提示 ---- */
+.iphone-folder-footer {
+  flex-shrink: 0;
+  padding: 24px 16px 40px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--bg-page);
+}
