@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/plan10-iphone-schedule.css" />
   <link rel="stylesheet" href="css/plan11-iphone-todo-folder.css" />
   <link rel="stylesheet" href="css/plan12-iphone-discovery.css" />
+  <link rel="stylesheet" href="css/plan13-iphone-memo.css" />
 </head>
 <body>
   <div class="prototype-shell">
@@ -74,6 +75,10 @@
         <button class="ui-gallery__item" data-ui="plan12-iphone-discovery">
           <span class="ui-gallery__item-index">12</span>
           <span class="ui-gallery__item-label">图12-iphone发现</span>
+        </button>
+        <button class="ui-gallery__item" data-ui="plan13-iphone-memo">
+          <span class="ui-gallery__item-index">13</span>
+          <span class="ui-gallery__item-label">图13-iphone备忘录</span>
         </button>
         <!-- 后续 UI 图在此追加 -->
       </nav>
@@ -2599,6 +2604,156 @@
                   <span class="iphone-tabbar__label">相册</span>
                 </button>
                 <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 3h10l3 3v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M6 13h6M6 16h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">备忘录</span>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 图13-iphone备忘录 ========== -->
+        <div class="plan13-iphone-memo" data-ui-panel="plan13-iphone-memo" style="display: none;">
+          <div class="iphone-frame">
+            <div class="iphone-frame__screen">
+              <!-- iOS 状态栏 -->
+              <div class="iphone-statusbar">
+                <span class="iphone-statusbar__time">08:48</span>
+                <div class="iphone-statusbar__icons">
+                  <div class="iphone-statusbar__signal" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                  <span class="iphone-statusbar__wifi" aria-hidden="true">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 2.5C5.5 2.5 3.2 3.4 1.5 5L0 3.5C2.2 1.3 5 0 8 0s5.8 1.3 8 3.5L14.5 5C12.8 3.4 10.5 2.5 8 2.5zM8 6.5c-1.5 0-2.9.6-3.9 1.6L2.6 6C4.1 4.5 6 3.5 8 3.5s3.9 1 5.4 2.5l-1.5 2.1C10.9 7.1 9.5 6.5 8 6.5zM8 9.5c-.8 0-1.5.3-2.1.9L8 12l2.1-1.6c-.6-.6-1.3-.9-2.1-.9z" fill="currentColor"/></svg>
+                  </span>
+                  <span class="iphone-statusbar__battery" aria-hidden="true">
+                    <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor" stroke-opacity="0.35"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><path d="M23 4v4a1.5 1.5 0 000-4z" fill="currentColor" fill-opacity="0.4"/></svg>
+                    <span>85</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="plan13-iphone-memo__body">
+                <!-- 顶部标题栏 -->
+                <header class="iphone-memo-header">
+                  <button class="iphone-memo-header__avatar" type="button" aria-label="我的">我</button>
+                  <h1 class="iphone-memo-header__title">备忘录</h1>
+                  <div class="iphone-memo-header__actions">
+                    <button class="iphone-memo-header__btn" type="button" aria-label="新建备忘录">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <button class="iphone-memo-header__btn" type="button" aria-label="完成">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                  </div>
+                </header>
+
+                <!-- 分类 Tab -->
+                <div class="iphone-memo-tabs">
+                  <button class="iphone-memo-tabs__item iphone-memo-tabs__item--active" type="button">所有备忘</button>
+                  <button class="iphone-memo-tabs__item" type="button">AI私教</button>
+                  <button class="iphone-memo-tabs__item" type="button">运维</button>
+                  <button class="iphone-memo-tabs__add" type="button" aria-label="新建分类">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+
+                <!-- 瀑布流卡片 -->
+                <div class="iphone-memo-masonry">
+                  <!-- 左列 -->
+                  <div class="iphone-memo-col">
+                    <article class="iphone-memo-card">
+                      <div class="iphone-memo-card__icon">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="28" rx="5" stroke="currentColor" stroke-width="2"/><path d="M15 7v6M29 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="17" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M23 20h7M14 28h16M14 32h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                      </div>
+                      <h3 class="iphone-memo-card__title">PlanTodo的问题</h3>
+                      <span class="iphone-memo-card__status">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.2 2.2L9.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        0/16 已完成
+                      </span>
+                    </article>
+
+                    <article class="iphone-memo-card">
+                      <div class="iphone-memo-card__icon">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="28" rx="5" stroke="currentColor" stroke-width="2"/><path d="M15 7v6M29 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="17" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M23 20h7M14 28h16M14 32h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                      </div>
+                      <h3 class="iphone-memo-card__title">YouNote 缺陷</h3>
+                      <span class="iphone-memo-card__status">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.2 2.2L9.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        0/1 已完成
+                      </span>
+                    </article>
+
+                    <article class="iphone-memo-card">
+                      <div class="iphone-memo-card__icon">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="28" rx="5" stroke="currentColor" stroke-width="2"/><path d="M15 7v6M29 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="17" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M23 20h7M14 28h16M14 32h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                      </div>
+                      <h3 class="iphone-memo-card__title">服务终端部署命令</h3>
+                      <p class="iphone-memo-card__desc">测试环境：
+sudo supervisorctl restart ShareBookDev</p>
+                    </article>
+                  </div>
+
+                  <!-- 右列 -->
+                  <div class="iphone-memo-col">
+                    <article class="iphone-memo-card">
+                      <div class="iphone-memo-card__icon">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="28" rx="5" stroke="currentColor" stroke-width="2"/><path d="M15 7v6M29 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="17" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M23 20h7M14 28h16M14 32h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                      </div>
+                      <h3 class="iphone-memo-card__title">一刀大概包含多…</h3>
+                      <p class="iphone-memo-card__desc">5月末到6月末买了一个套餐，人均70刀每天，总共200刀。总价309块。
+按照消耗统计来算，179.37刀对应消耗了83.8M token，其中M为百万token。
+所以0.467 M token对应1刀的价格比较合理</p>
+                      <span class="iphone-memo-card__status">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.2 2.2L9.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        0/3 已完成
+                      </span>
+                    </article>
+
+                    <article class="iphone-memo-card">
+                      <div class="iphone-memo-card__icon">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="8" y="10" width="28" height="28" rx="5" stroke="currentColor" stroke-width="2"/><path d="M15 7v6M29 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="17" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M23 20h7M14 28h16M14 32h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                      </div>
+                      <h3 class="iphone-memo-card__title">终端打开 Keych…</h3>
+                      <p class="iphone-memo-card__desc">open -a "keychain Access"</p>
+                      <span class="iphone-memo-card__status">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.2 2.2L9.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        0/0 已完成
+                      </span>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 底部 Tab 栏（备忘录高亮） -->
+              <nav class="iphone-tabbar" aria-label="主导航">
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h16M7 2v4M15 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">行程</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">待办</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l1.8 4.2 4.5.4-3.4 3 1 4.4L11 12.5 7.1 14l1-4.4-3.4-3 4.5-.4L11 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">发现</span>
+                </button>
+                <button class="iphone-tabbar__item" type="button">
+                  <span class="iphone-tabbar__icon">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="9" r="2" stroke="currentColor" stroke-width="1.2"/><path d="M2 14l5-4 3 2.5 4-3.5 6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="iphone-tabbar__label">相册</span>
+                </button>
+                <button class="iphone-tabbar__item iphone-tabbar__item--active" type="button">
                   <span class="iphone-tabbar__icon">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 3h10l3 3v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4l2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M6 10h8M6 13h6M6 16h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
                   </span>
