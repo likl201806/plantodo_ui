@@ -288,6 +288,49 @@
   opacity: 1;
 }
 
+/* 图2-图9：复用图1左侧栏空间/模块等高与空间底部渐变 */
+.nav-sidebar > .nav-sidebar__section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.nav-sidebar > .nav-sidebar__section--space .nav-sidebar__list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.nav-sidebar > .nav-sidebar__section--space .nav-sidebar__list::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-sidebar > .nav-sidebar__section:not(.nav-sidebar__section--space) .nav-sidebar__list {
+  flex: 1;
+  min-height: 0;
+}
+
+.nav-sidebar > .nav-sidebar__section.nav-sidebar__scroll--fade-bottom::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(247, 247, 248, 0), var(--bg-sidebar));
+}
+
+.nav-sidebar > .nav-sidebar__bottom {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
 .plan1-mac-todo .nav-sidebar__bottom {
   margin-top: 0;
   flex-shrink: 0;
