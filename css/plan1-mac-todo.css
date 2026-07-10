@@ -228,6 +228,71 @@
   margin-bottom: 6px;
 }
 
+/* 图1：空间与模块区域等高分配剩余侧栏高度 */
+.plan1-mac-todo .nav-sidebar__sections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 6px;
+}
+
+.plan1-mac-todo .nav-sidebar__sections .nav-sidebar__section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-bottom: 0;
+}
+
+.plan1-mac-todo .nav-sidebar__sections .nav-sidebar__section:not(.nav-sidebar__section--space) .nav-sidebar__list {
+  flex: 1;
+  min-height: 0;
+}
+
+/* 图1：空间列表纵向滚动 + 底部渐变提示 */
+.plan1-mac-todo .nav-sidebar__scroll {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.plan1-mac-todo .nav-sidebar__scroll-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.plan1-mac-todo .nav-sidebar__scroll-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.plan1-mac-todo .nav-sidebar__scroll::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(247, 247, 248, 0), var(--bg-sidebar));
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.plan1-mac-todo .nav-sidebar__scroll--fade-bottom::after {
+  opacity: 1;
+}
+
+.plan1-mac-todo .nav-sidebar__bottom {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
 .nav-sidebar__section-header {
   display: flex;
   align-items: center;
